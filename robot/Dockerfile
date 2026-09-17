@@ -19,10 +19,16 @@ RUN git clone https://github.com/ros-physical-ai/ros2_so_arm.git src/ros2_so_arm
     git clone https://github.com/JafarAbdi/feetech_ros2_driver.git src/feetech_ros2_driver && \
     git -C src/feetech_ros2_driver checkout "$FEETECH_REF" && \
     git clone https://github.com/michaljohnson/cas-so101.git src/cas-so101 && \
-    git -C src/cas-so101 checkout "$CAS_REF"
+    git -C src/cas-so101 checkout "$CAS_REF" && \
+    touch src/ros2_so_arm/so_arm_gz/COLCON_IGNORE \
+          src/ros2_so_arm/so_arm100_description/COLCON_IGNORE
 
 # Only the packages the robot side needs. Skipped: Gazebo (so_arm_gz), the MoveIt
 # Setup Assistant and the rqt trajectory GUI, which would pull in a lot for nothing.
+# so_arm101_moveit_config exec_depends on so_arm_gz (its gazebo mode), and so_arm_gz on
+# so_arm100_description - a COLCON_IGNORE in both (above) hides them from colcon, which
+# would otherwise refuse to build the MoveIt config. Its gazebo mode is unusable here,
+# mock_components and real are not.
 # rmw_zenoh is for the link to RAP later.
 ARG PKGS="feetech_ros2_driver so_arm_utils so_arm101_description so_arm101_moveit_config"
 RUN apt-get update && rosdep update && \

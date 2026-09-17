@@ -1,5 +1,9 @@
 # Lab 3 — the real arm (Jetson) 🚧
 
+Status: tested on a Jetson with a real arm — the image builds (arm64, ~3.5 GB), the driver
+connects on `/dev/ttyACM0`, all three controllers activate and `/joint_states` shows the real
+joint angles. Not yet tested: moving the arm from MoveIt or a trajectory.
+
 The arm is plugged into a Jetson by USB. The Jetson runs only what has to sit next to
 the arm: the servo driver and ros2_control, which updates the servos at 50 Hz and must
 not depend on the network. MoveIt, RViz and your code run on RAP.

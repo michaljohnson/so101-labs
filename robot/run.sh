@@ -11,9 +11,13 @@ shift
 # --network/--ipc host: ROS nodes in the container talk to the Jetson and the lab
 #   network directly (DDS discovery and shared memory need both).
 # --device: the arm appears inside as /dev/LeRobotFollower, the name ros2_so_arm expects.
+# --cap-add SYS_NICE + rtprio: without them ros2_control cannot take real-time priority
+#   ("Could not enable FIFO RT scheduling policy") and the 50 Hz servo loop runs as an
+#   ordinary process - it works, but it can stutter under load.
 # DISPLAY + X11 socket: lets RViz open on the Jetson's monitor (run `xhost +local:` once).
 docker run --rm -it --name so101 \
   --network host --ipc host \
+  --cap-add SYS_NICE --ulimit rtprio=99 \
   --device "$port":/dev/LeRobotFollower \
   -e ROS_DOMAIN_ID=42 \
   -e DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix \
