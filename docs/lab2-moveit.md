@@ -1,7 +1,7 @@
 # Lab 2 — MoveIt and picking (session 8)
 
 Status: `mock_components` ✅ · `gazebo` ✅ (plan & execute moves the arm in Gazebo) ·
-marker dragging ✅ (*Approx IK Solutions*, preset in the course RViz config) · `real` 🚧
+marker dragging ✅ (*Approx IK Solutions*, preset in the course RViz config) · `real` ✅
 
 `ros2_so_arm` ships a MoveIt config for the SO-100 only, but its helper code already
 expects an `so_arm101_moveit_config` package. The course provides that package,
