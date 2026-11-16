@@ -2,7 +2,7 @@
 
 Set the workspace up once, then session 3 runs the arm in Gazebo.
 
-## Set up the workspace (once) ✅
+## Set up the workspace 
 
 ### What you need
 
@@ -91,7 +91,7 @@ Every new terminal needs this `source` line too.
 Gazebo and RViz need a screen: use a terminal in the web desktop, or SSH with
 `setup.sh` (which sets `DISPLAY=:0`).
 
-### 3.1 Start Gazebo ✅
+### 3.1 Start Gazebo 
 
 ```bash
 # terminal 1
@@ -101,7 +101,7 @@ ros2 launch so_arm_gz so_arm_gz_bringup.launch.py        # SO-101 is the default
 
 Gazebo and RViz open with the arm. Press ▶ in Gazebo if the simulation is paused.
 
-### 3.2 Command the joints 🚧
+### 3.2 Command the joints 
 
 ```bash
 # terminal 2
