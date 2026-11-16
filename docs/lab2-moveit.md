@@ -1,8 +1,5 @@
 # Lab 2 — MoveIt and picking (session 8)
 
-Status: `mock_components` ✅ · `gazebo` ✅ (plan & execute moves the arm in Gazebo) ·
-marker dragging ✅ (*Approx IK Solutions*, preset in the course RViz config) · `real` ✅
-
 `ros2_so_arm` ships a MoveIt config for the SO-100 only, but its helper code already
 expects an `so_arm101_moveit_config` package. The course provides that package,
 adapted from the SO-100 one:
@@ -42,7 +39,7 @@ closely as the arm allows. This only affects RViz — in your own code, MoveIt s
 tries to reach the exact pose you ask for, so choose poses the arm can reach
 (e.g. gripper pointing down, turned towards the object). Named poses always work.
 
-## Pick an object in simulation 🚧
+## Pick an object in simulation 
 
 Start the Gazebo demo above and add objects in Gazebo with the **Resource Spawner**
 (Gazebo menu ⋮ top right → *Resource Spawner*). Where things are: the arm stands on
