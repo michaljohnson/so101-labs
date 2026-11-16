@@ -1,9 +1,5 @@
-# Lab 3 — the real arm (Jetson) 🚧
+# Lab 3 — the real arm (Jetson) 
 
-Status: ✅ tested on a Jetson with a real arm — the image builds (arm64, ~3.5 GB), the driver
-connects on `/dev/ttyACM0`, the controllers activate, `/joint_states` is real, trajectories and the
-gripper action move the arm, and MoveIt with `hardware_type:=real` plans and executes with RViz on
-the Jetson's monitor (`xhost +local:` there first; RViz inside the container needs that display).
 
 The arm is plugged into a Jetson by USB. The Jetson runs only what has to sit next to
 the arm: the servo driver and ros2_control, which updates the servos at 50 Hz and must
