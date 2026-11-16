@@ -13,13 +13,12 @@ heavy runs on the cluster — you need neither a GPU nor a ROS install on your o
 
 | Page | What it is |
 |---|---|
-| [docs/lab1-sim.md](docs/lab1-sim.md) | set up the workspace in the pod, then the arm in Gazebo ✅ |
+| [docs/lab1-sim.md](docs/lab1-sim.md) | set up the workspace in the pod, then the arm in Gazebo |
 | [docs/lab2-moveit.md](docs/lab2-moveit.md) | MoveIt: planning, named poses, picking an object |
-| [docs/lab3-real.md](docs/lab3-real.md) | the real arm on the Jetson 🚧 |
+| [docs/lab3-real.md](docs/lab3-real.md) | the real arm on the Jetson |
 | [docs/troubleshooting.md](docs/troubleshooting.md) | when something doesn't work |
 | [viz/README.md](viz/README.md) | seeing it from your own laptop |
 
-✅ = tested end to end · 🚧 = not tested yet.
 
 | Folder | Contents |
 |---|---|
